@@ -1,24 +1,9 @@
 /*******************************************************************************
- *                 Register Abstraction
+ *                 Register Abstraction / STRUCTS
  ******************************************************************************/
-/** \defgroup CMSIS_core_register CMSIS Core Register
-  Core Register contain:
-  - Core Register
-  - Core NVIC Register
-  - Core SCB Register
-  - Core SysTick Register
-  - Core Debug Register
-  - Core MPU Register
-*/
 
-/** \ingroup  CMSIS_core_register   
-    \defgroup CMSIS_CORE CMSIS Core
-  Type definitions for the Cortex-M Core Registers
-  @{
- */
-
-/** \brief  Union type to access the Application Program Status Register (APSR).
- */
+// CORE
+/** \brief  Union type to access the Application Program Status Register (APSR).*/
 typedef union
 {
   struct
@@ -40,8 +25,8 @@ typedef union
 } APSR_Type;
 
 
-/** \brief  Union type to access the Interrupt Program Status Register (IPSR).
- */
+
+/** \brief  Union type to access the Interrupt Program Status Register (IPSR).*/
 typedef union
 {
   struct
@@ -54,14 +39,8 @@ typedef union
 
 
 
-/** \ingroup  CMSIS_core_register   
-    \defgroup CMSIS_NVIC CMSIS NVIC
-  Type definitions for the Cortex-M NVIC Registers
-  @{
- */
-
-/** \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
- */
+// NVIC
+/** \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).*/
 typedef struct
 {
   __IO uint32_t ISER[8];                 /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register           */
@@ -79,17 +58,10 @@ typedef struct
   __O  uint32_t STIR;                    /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Register     */
 }  NVIC_Type;                                               
 
-/*@} end of group CMSIS_NVIC */
 
 
-/** \ingroup  CMSIS_core_register   
-    \defgroup CMSIS_SysTick CMSIS SysTick
-  Type definitions for the Cortex-M System Timer Registers
-  @{
- */
-
-/** \brief  Structure type to access the System Timer (SysTick).
- */
+// SYSTICK
+/** \brief  Structure type to access the System Timer (SysTick).*/
 typedef struct
 {
   __IO uint32_t CTRL;                    /*!< Offset: 0x000 (R/W)  SysTick Control and Status Register */
@@ -119,10 +91,12 @@ typedef struct
   #define MPU               ((MPU_Type*)            MPU_BASE)         /*!< Memory Protection Unit            */
 #endif
 
-/*@} */
 
 
-/* ##########################   NVIC functions  #################################### */
+
+/*******************************************************************************
+ *                 			NVIC functions
+ ******************************************************************************/
 
 /** \brief  Enable External Interrupt
 
@@ -261,17 +235,10 @@ static __INLINE void NVIC_SystemReset(void)
   while(1);                                                    /* wait until reset */
 }
 
-/*@} end of CMSIS_Core_NVICFunctions */
 
-
-
-/* ##################################    SysTick function  ############################################ */
-/** \ingroup  CMSIS_Core_FunctionInterface   
-    \defgroup CMSIS_Core_SysTickFunctions CMSIS Core SysTick Functions
-  @{
- */
-
-#if (__Vendor_SysTickConfig == 0)
+/*******************************************************************************
+ *                 		SYSTICK functions
+ ******************************************************************************/
 
 /** \brief  System Tick Configuration
 
@@ -294,5 +261,3 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
                    SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
   return (0);                                                  /* Function successful */
 }
-
-#endif
