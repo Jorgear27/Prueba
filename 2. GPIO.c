@@ -34,6 +34,7 @@ void GPIO_SetValue(uint8_t portNum, uint32_t bitValue);
  *                             example: value 0x5 to clear bit 0 and bit 1.
  * @return        None
  **********************************************************************/
+
 void GPIO_ClearValue(uint8_t portNum, uint32_t bitValue);
 
 /*********************************************************************//**
