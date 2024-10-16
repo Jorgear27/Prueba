@@ -34,6 +34,7 @@ void SYSTICK_ExternalInit(uint32_t freq, uint32_t time);
  * 					- DISABLE
  * @return 		None
  **********************************************************************/
+
 void SYSTICK_Cmd(FunctionalState NewState);
 
 /*********************************************************************//**
