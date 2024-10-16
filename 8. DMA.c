@@ -7,10 +7,10 @@
  */
 typedef struct {
 	uint32_t ChannelNum; 	/**< DMA channel number, should be in
-								range from 0 to 7.
-								Note: DMA channel 0 has the highest priority
-								and DMA channel 7 the lowest priority.
-								*/
+				range from 0 to 7.
+				Note: DMA channel 0 has the highest priority
+				and DMA channel 7 the lowest priority.
+				*/
 	uint32_t TransferSize;	/**< Length/Size of transfer */
 	uint32_t TransferWidth;	/**< Transfer width - used for TransferType is GPDMA_TRANSFERTYPE_M2M only */
 	uint32_t SrcMemAddr;	/**< Physical Source Address, used in case TransferType is chosen as
@@ -18,52 +18,52 @@ typedef struct {
 	uint32_t DstMemAddr;	/**< Physical Destination Address, used in case TransferType is chosen as
 								 GPDMA_TRANSFERTYPE_M2M or GPDMA_TRANSFERTYPE_P2M */
 	uint32_t TransferType;	/**< Transfer Type, should be one of the following:
-							- GPDMA_TRANSFERTYPE_M2M: Memory to memory - DMA control
-							- GPDMA_TRANSFERTYPE_M2P: Memory to peripheral - DMA control
-							- GPDMA_TRANSFERTYPE_P2M: Peripheral to memory - DMA control
-							- GPDMA_TRANSFERTYPE_P2P: Source peripheral to destination peripheral - DMA control
-							*/
-	uint32_t SrcConn;		/**< Peripheral Source Connection type, used in case TransferType is chosen as
-							GPDMA_TRANSFERTYPE_P2M or GPDMA_TRANSFERTYPE_P2P, should be one of
-							following:
-							 - GPDMA_CONN_SSP0_Tx: SSP0, Tx
-							 - GPDMA_CONN_SSP0_Rx: SSP0, Rx
-							 - GPDMA_CONN_SSP1_Tx: SSP1, Tx
-							 - GPDMA_CONN_SSP1_Rx: SSP1, Rx
-							 - GPDMA_CONN_ADC: ADC
-							 - GPDMA_CONN_I2S_Channel_0: I2S Channel 0
-							 - GPDMA_CONN_I2S_Channel_1: I2S Channel 1
-							 - GPDMA_CONN_DAC: DAC
-							 - GPDMA_CONN_UART0_Tx_MAT0_0: UART0 Tx / MAT0.0
-							 - GPDMA_CONN_UART0_Rx_MAT0_1: UART0 Rx / MAT0.1
-							 - GPDMA_CONN_UART1_Tx_MAT1_0: UART1 Tx / MAT1.0
-							 - GPDMA_CONN_UART1_Rx_MAT1_1: UART1 Rx / MAT1.1
-							 - GPDMA_CONN_UART2_Tx_MAT2_0: UART2 Tx / MAT2.0
-							 - GPDMA_CONN_UART2_Rx_MAT2_1: UART2 Rx / MAT2.1
-							 - GPDMA_CONN_UART3_Tx_MAT3_0: UART3 Tx / MAT3.0
-							 - GPDMA_CONN_UART3_Rx_MAT3_1: UART3 Rx / MAT3.1
-							 */
-	uint32_t DstConn;		/**< Peripheral Destination Connection type, used in case TransferType is chosen as
-							GPDMA_TRANSFERTYPE_M2P or GPDMA_TRANSFERTYPE_P2P, should be one of
-							following:
-							 - GPDMA_CONN_SSP0_Tx: SSP0, Tx
-							 - GPDMA_CONN_SSP0_Rx: SSP0, Rx
-							 - GPDMA_CONN_SSP1_Tx: SSP1, Tx
-							 - GPDMA_CONN_SSP1_Rx: SSP1, Rx
-							 - GPDMA_CONN_ADC: ADC
-							 - GPDMA_CONN_I2S_Channel_0: I2S Channel 0
-							 - GPDMA_CONN_I2S_Channel_1: I2S Channel 1
-							 - GPDMA_CONN_DAC: DAC
-							 - GPDMA_CONN_UART0_Tx_MAT0_0: UART0 Tx / MAT0.0
-							 - GPDMA_CONN_UART0_Rx_MAT0_1: UART0 Rx / MAT0.1
-							 - GPDMA_CONN_UART1_Tx_MAT1_0: UART1 Tx / MAT1.0
-							 - GPDMA_CONN_UART1_Rx_MAT1_1: UART1 Rx / MAT1.1
-							 - GPDMA_CONN_UART2_Tx_MAT2_0: UART2 Tx / MAT2.0
-							 - GPDMA_CONN_UART2_Rx_MAT2_1: UART2 Rx / MAT2.1
-							 - GPDMA_CONN_UART3_Tx_MAT3_0: UART3 Tx / MAT3.0
-							 - GPDMA_CONN_UART3_Rx_MAT3_1: UART3 Rx / MAT3.1
-							 */
-	uint32_t DMALLI;		/**< Linker List Item structure data address
+					- GPDMA_TRANSFERTYPE_M2M: Memory to memory - DMA control
+					- GPDMA_TRANSFERTYPE_M2P: Memory to peripheral - DMA control
+					- GPDMA_TRANSFERTYPE_P2M: Peripheral to memory - DMA control
+					- GPDMA_TRANSFERTYPE_P2P: Source peripheral to destination peripheral - DMA control
+					*/
+	uint32_t SrcConn;	/**< Peripheral Source Connection type, used in case TransferType is chosen as
+					GPDMA_TRANSFERTYPE_P2M or GPDMA_TRANSFERTYPE_P2P, should be one of
+					following:
+					 - GPDMA_CONN_SSP0_Tx: SSP0, Tx
+					 - GPDMA_CONN_SSP0_Rx: SSP0, Rx
+					 - GPDMA_CONN_SSP1_Tx: SSP1, Tx
+					 - GPDMA_CONN_SSP1_Rx: SSP1, Rx
+					 - GPDMA_CONN_ADC: ADC
+					 - GPDMA_CONN_I2S_Channel_0: I2S Channel 0
+					 - GPDMA_CONN_I2S_Channel_1: I2S Channel 1
+					 - GPDMA_CONN_DAC: DAC
+					 - GPDMA_CONN_UART0_Tx_MAT0_0: UART0 Tx / MAT0.0
+					 - GPDMA_CONN_UART0_Rx_MAT0_1: UART0 Rx / MAT0.1
+					 - GPDMA_CONN_UART1_Tx_MAT1_0: UART1 Tx / MAT1.0
+					 - GPDMA_CONN_UART1_Rx_MAT1_1: UART1 Rx / MAT1.1
+					 - GPDMA_CONN_UART2_Tx_MAT2_0: UART2 Tx / MAT2.0
+					 - GPDMA_CONN_UART2_Rx_MAT2_1: UART2 Rx / MAT2.1
+					 - GPDMA_CONN_UART3_Tx_MAT3_0: UART3 Tx / MAT3.0
+					 - GPDMA_CONN_UART3_Rx_MAT3_1: UART3 Rx / MAT3.1
+					 */
+	uint32_t DstConn;	/**< Peripheral Destination Connection type, used in case TransferType is chosen as
+						GPDMA_TRANSFERTYPE_M2P or GPDMA_TRANSFERTYPE_P2P, should be one of
+						following:
+						 - GPDMA_CONN_SSP0_Tx: SSP0, Tx
+						 - GPDMA_CONN_SSP0_Rx: SSP0, Rx
+						 - GPDMA_CONN_SSP1_Tx: SSP1, Tx
+						 - GPDMA_CONN_SSP1_Rx: SSP1, Rx
+						 - GPDMA_CONN_ADC: ADC
+						 - GPDMA_CONN_I2S_Channel_0: I2S Channel 0
+						 - GPDMA_CONN_I2S_Channel_1: I2S Channel 1
+						 - GPDMA_CONN_DAC: DAC
+						 - GPDMA_CONN_UART0_Tx_MAT0_0: UART0 Tx / MAT0.0
+						 - GPDMA_CONN_UART0_Rx_MAT0_1: UART0 Rx / MAT0.1
+						 - GPDMA_CONN_UART1_Tx_MAT1_0: UART1 Tx / MAT1.0
+						 - GPDMA_CONN_UART1_Rx_MAT1_1: UART1 Rx / MAT1.1
+						 - GPDMA_CONN_UART2_Tx_MAT2_0: UART2 Tx / MAT2.0
+						 - GPDMA_CONN_UART2_Rx_MAT2_1: UART2 Rx / MAT2.1
+						 - GPDMA_CONN_UART3_Tx_MAT3_0: UART3 Tx / MAT3.0
+						 - GPDMA_CONN_UART3_Rx_MAT3_1: UART3 Rx / MAT3.1
+						 */
+	uint32_t DMALLI;	/**< Linker List Item structure data address
 							if there's no Linker List, set as '0'
 							*/
 } GPDMA_Channel_CFG_Type;
