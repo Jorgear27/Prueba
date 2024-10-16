@@ -3,7 +3,8 @@
 /* Public Functions ----------------------------------------------------------- */
 
 /*********************************************************************//**
- * @brief 		This function initialises the system tick timer and its interrupt and start the system tick timer.
+ * @brief 		This function initialises the system tick timer and its interrupt 
+                 and start the system tick timer.
                 Counter is in free running mode to generate periodical interrupts.
  * @param[in]	ticks  Number of ticks between two interrupts
  * @return 		    0  Function succeeded
